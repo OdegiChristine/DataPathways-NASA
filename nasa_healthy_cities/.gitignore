@@ -1,0 +1,81 @@
+# -----------------------------
+# Python
+# -----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+*.db
+*.sqlite3
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb.json
+
+# Logs
+*.log
+logs/
+*.out
+
+# Byte-compiled / caches
+*.egg-info/
+.eggs/
+*.manifest
+*.spec
+
+# -----------------------------
+# FastAPI / Uvicorn
+# -----------------------------
+# Ignore auto-generated files
+*.pid
+
+# -----------------------------
+# Data / Datasets
+# -----------------------------
+data/
+datasets/
+*.csv
+*.tsv
+*.xlsx
+*.geojson
+*.shp
+*.shx
+*.dbf
+*.prj
+*.tif
+*.tiff
+*.nc
+*.hdf
+*.h5
+
+# Large binary files
+*.zip
+*.tar.gz
+*.rar
+
+# -----------------------------
+# Environment & Secrets
+# -----------------------------
+.env
+.env.*
+*.key
+*.pem
+*.crt
+secrets.json
+config.yaml
+
+# -----------------------------
+# IDEs / Editors
+# -----------------------------
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
