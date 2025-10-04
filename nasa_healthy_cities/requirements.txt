@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+pandas
+numpy
+geopandas
+rasterio
+shapely
+plotly
+folium
+requests
+pydantic
+python-multipart
+pytest
+httpx
