@@ -25,8 +25,11 @@ def test_airquality_endpoint():
 
 
 def test_greenspace_endpoint():
-    r = client.get(f"/greenspace/{NAIROBI['lat']}/{NAIROBI['lon']}")
+    r = client.get(f"/greenspace/cover/{NAIROBI['lat']}/{NAIROBI['lon']}")
     assert r.status_code == 200
+    data = r.json()
+    # Analysis greenspace response
+    assert "coverage_pct" in data and "ndvi" in data
 
 
 def test_exposure_endpoint():
@@ -37,3 +40,28 @@ def test_exposure_endpoint():
 def test_heatmap_requires_file():
     r = client.post("/heatmap/upload")
     assert r.status_code == 422
+
+
+def test_water_endpoint():
+    r = client.get(f"/water/{NAIROBI['lat']}/{NAIROBI['lon']}")
+    assert r.status_code == 200
+    data = r.json()
+    assert "nearby_water" in data and "risk_score" in data
+    assert data["nearby_water"]["type"] == "FeatureCollection"
+    assert isinstance(data["risk_score"], (int, float))
+
+
+def test_healthfacilities_endpoint():
+    r = client.get(f"/healthfacilities/{NAIROBI['lat']}/{NAIROBI['lon']}")
+    assert r.status_code == 200
+    data = r.json()
+    assert data["type"] == "FeatureCollection"
+    assert isinstance(data["features"], list)
+
+
+def test_risk_endpoint():
+    r = client.get(f"/risk/{NAIROBI['lat']}/{NAIROBI['lon']}")
+    assert r.status_code == 200
+    data = r.json()
+    assert "components" in data and "vulnerability_score" in data
+    assert isinstance(data["vulnerability_score"], (int, float))

@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from .routers import nasa, analysis
+from .routers import water, greenspace, healthfacilities, risk, map
 
 app = FastAPI(
     title="Data Pathways to Healthy Cities API",
@@ -27,6 +28,11 @@ def healthcheck():
 # Routers
 app.include_router(nasa.router, prefix="")
 app.include_router(analysis.router, prefix="")
+app.include_router(water.router, prefix="")
+app.include_router(greenspace.router, prefix="")
+app.include_router(healthfacilities.router, prefix="")
+app.include_router(risk.router, prefix="")
+app.include_router(map.router, prefix="")
 
 # Optional dev entry
 if __name__ == "__main__":
