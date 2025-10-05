@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers import air_quality, settlements
+from routers import air_quality, settlements, geocode
 
 app = FastAPI(
     title="Data Pathways to Healthy Cities API",
@@ -10,6 +10,7 @@ app = FastAPI(
 # Register routers
 #app.include_router(air_quality.router)
 app.include_router(settlements.router)
+app.include_router(geocode.router)
 
 @app.get("/")
 def root():
