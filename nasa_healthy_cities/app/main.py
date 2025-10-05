@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from .routers import nasa, analysis
 from .routers import water, greenspace, healthfacilities, risk, map
+from .routers import air, settlement, areas
 
 app = FastAPI(
     title="Data Pathways to Healthy Cities API",
@@ -33,6 +34,9 @@ app.include_router(greenspace.router, prefix="")
 app.include_router(healthfacilities.router, prefix="")
 app.include_router(risk.router, prefix="")
 app.include_router(map.router, prefix="")
+app.include_router(air.router, prefix="")
+app.include_router(settlement.router, prefix="")
+app.include_router(areas.router, prefix="")
 
 # Optional dev entry
 if __name__ == "__main__":

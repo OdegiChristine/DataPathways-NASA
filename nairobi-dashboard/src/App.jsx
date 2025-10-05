@@ -7,6 +7,7 @@ import SettlementGrowth from './pages/SettlementGrowth';
 import WhyTheseAreas from './pages/WhyTheseAreas';
 import AirPollution from './pages/AirPollution';
 import WaterPollution from './pages/WaterPollution';
+import PlannerChatbot from './pages/PlannerChatbot';
 import './index.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/dashboard/why-these-areas" element={<WhyTheseAreas />} />
           <Route path="/dashboard/air-pollution" element={<AirPollution />} />
           <Route path="/dashboard/water-pollution" element={<WaterPollution />} />
+          <Route path="/dashboard/assistant" element={<PlannerChatbot />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>

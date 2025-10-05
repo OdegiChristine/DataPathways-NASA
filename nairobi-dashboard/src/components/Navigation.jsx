@@ -10,6 +10,7 @@ const Navigation = () => {
     { path: '/dashboard/why-these-areas', label: 'Why These Areas' },
     { path: '/dashboard/air-pollution', label: 'Air Pollution' },
     { path: '/dashboard/water-pollution', label: 'Water Pollution' },
+    { path: '/dashboard/assistant', label: 'AI Assistant' },
   ];
 
   return (
@@ -20,7 +21,7 @@ const Navigation = () => {
             <Link to="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-green-600 rounded-lg"></div>
               <span className="font-bold text-gray-800 text-lg">
-                Nairobi Urban Dashboard
+                Urban Insights
               </span>
             </Link>
             
